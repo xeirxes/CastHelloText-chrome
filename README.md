@@ -1,10 +1,9 @@
 # HelloText-Chrome
 
-This Google Cast demo application shows how to send messages from an Chrome desktop browser to a receiver using a custom namespace. 
+This Google Cast demo application shows how to send messages from an Chrome desktop browser to a receiver using a custom namespace.
 
 ## Dependencies
 * Chrome browser.
-* Google Cast Extension: https://chrome.google.com/webstore/detail/google-cast/boadgeojelhgndaghljhdicfkmllpafd
 
 ## Setup Instructions
 * Just check out the code from GitHub, host chromehellotext.html on your own server and open that page in your Chrome browser
