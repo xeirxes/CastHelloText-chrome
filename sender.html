@@ -1,0 +1,56 @@
+<!--
+Copyright (C) 2017 Austin R. Scott LLC. All Rights Reserved.
+
+LEGAL NOTICE: This "Derivative Work" is based upon an original "Work"
+which may be located at
+
+    https://github.com/googlecast/CastHelloText-chrome
+
+The original "Work" is also licensed under the Apache License:
+
+  Copyright (C) 2014 Google Inc. All Rights Reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World</title>
+    <link rel="stylesheet" type="text/css" href="sender.css">
+    <script type="text/javascript" src="//www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+    <script type="text/javascript" src="config.js"></script>
+    <script type="text/javascript" src="sender.js"></script>
+  </head>
+  <body>
+    <table id="wrapper">
+      <tr>
+        <td>
+          <form method="get" action="JavaScript:update();">
+            <input id="input" class="border" type="text" size="30"
+              onwebkitspeechchange="transcribe(this.value)" x-webkit-speech/>
+          </form>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Debugging output -->
+    <div style="margin:10px; visibility:hidden;">
+      <textarea rows="20" cols="70" id="debugmessage">
+      </textarea>
+    </div>
+
+    <script type="text/javascript">
+      document.getElementById('input').focus();
+    </script>
+  </body>
+</html>

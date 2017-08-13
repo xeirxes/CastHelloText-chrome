@@ -1,32 +1,34 @@
-# HelloText-Chrome
+# Chalkboard
 
-This Google Cast demo application shows how to send messages from an Chrome desktop browser to a receiver using a custom namespace.
+Chalkboard is a tool which uses Google Cast. It allows a retail store to enter their product information in the Sender application HTML page, and then use Chromecast to cast the Receiver application HTML page to their Google Cast device. Useful for a business whose menu requires frequent changes.
 
-## Dependencies
-* Chrome browser.
+## How It Works
 
-## Setup Instructions
-* Just check out the code from GitHub, host chromehellotext.html on your own server and open that page in your Chrome browser
-* If you don't want to use the sample App ID, you need to do the following steps
-* Get a Chromecast device and get it set up for development: https://developers.google.com/cast/docs/developers#Get_started
-* Register an application on the Developers Console (http://cast.google.com/publish). Select the Custom Receiver option and specify the URL to where you are hosting the receiver.html file. You will get an App ID when you finish registering your application.
-* Setup the project dependencies
-* Insert your App ID in the chromehellotext.html file of the project (look for applicationID in that file)
-* Upload the chromehellotext.html file to your hosting server and load the URL for that file in your Chrome browser.
+Google Cast works using two parts. One part is a "Receiver" HTML5/JS application that runs and displays on the Cast device, and the other part is a Sender application which receives user input and sends relevant information to the Receiver. It is possible to create a "native" (installed via Google Play or the App Store) Sender application. This particular Sender application is also an HTML5/JS application, and as long as the user accesses the application using the Chrome browser, this Sender application should work regardless of OS.
 
-## References and How to report bugs
-* Cast APIs: http://developers.google.com/cast
-* Design Checklist (http://developers.google.com/cast/docs/design_checklist)
-* If you find any issues, please open a bug here on GitHub
+## Prerequisites For Deployment
 
-## How to make contributions?
-Please read and follow the steps in the CONTRIBUTING.md
+You will need:  
+* A web server ready to host HTML and JavaScript
+* A Google account with which to register a new Chromecast application
+
+## Deployment
+
+1. The repository files need to be placed into a public folder of a web server, with receiver.html and sender.html accessible from the web.
+2. The [Google Cast publisher's dashboard](https://cast.google.com/publish/) needs to be visited. The location of receiver.html and sender.html need to be registered in the "Add New Application" section, and you should add your testing device to Cast Receiver Devices with "Add New Device" (without this, a Custom Receiver application may not be accessible via your Chromecast device until your application is fully published with Google) 
+3. Execution of the application requires visiting sender.html in a Chrome browser. That's it!
+
+## Authors
+
+* **Google Cast Team** - *Initial work* - [Original Project](https://github.com/googlecast/CastHelloText-chrome)
+* **Austin R. Scott** - [xeirxes](https://github.com/xeirxes)
+
+See also the list of [contributors](https://github.com/xeirxes/chalkboard/contributors) who participated in this project.
 
 ## License
-See LICENSE
 
-## Terms
-Your use of this sample is subject to, and by using or downloading the sample files you agree to comply with, the [Google APIs Terms of Service](https://developers.google.com/terms/) and the [Google Cast SDK Additional Developer Terms of Service](https://developers.google.com/cast/docs/terms/).
+This project is licensed under the Apache License Version 2.0 - see the [LICENSE.md](LICENSE.md) file for details
 
-## Google+
-Google Cast Developers Community on Google+ [http://goo.gl/TPLDxj](http://goo.gl/TPLDxj)
+## Acknowledgments
+
+* I'd like to thank Tim Buckley, proprietor of [Buckley's Pubs](https://www.buckleyspubs.com). Tim fosters a tight-knit, loyal team of employees who actively seek to improve our workplace, and this particular project was inspired by my own desire to improve Tim's establishment.
